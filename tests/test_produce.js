@@ -58,33 +58,34 @@ describe('test_produce', function() {
                     assert.strictEqual(result, expect);
                 });
             });
-            /*
-            it('multi-line', function() {
-                var expect = "";
-                var result = produce.produce(expect);
-                var value = {};
+            it('producer', function() {
+                var values = [
+                    [ 'tcp://mqtt.iotdb.org:1883', {
+                        rel: 'mqtt',
+                        payload: 'PUT',
+                        topic: 'bedroom/light'
+                    }, ],
+                    [ 'ssl://mqtt.iotdb.org:1883', {
+                        rel: 'mqtt',
+                        payload: 'PUT',
+                        topic: 'bedroom/light'
+                    }, ],
+                ];
+                var vi = 0;
+                var _producer = function(callback) {
+                    if (vi >= values.length) {
+                        callback(null, null);
+                    } else {
+                        var vs = values[vi++];
+                        callback(vs[0], vs[1]);
+                    }
+                };
 
-                console.log(result);
-                // assert.strictEqual(result, value);
+                var expect = '<tcp://mqtt.iotdb.org:1883>;rel=mqtt;payload=PUT;topic=bedroom/light,<ssl://mqtt.iotdb.org:1883>;rel=mqtt;payload=PUT;topic=bedroom/light'
+                produce.produce(_producer, function(error, result) {
+                    assert.strictEqual(result, expect);
+                });
             });
-            it('bad', function() {
-                var expect = 124;
-                var result = produce.produce(expect);
-                var value = {};
-
-                console.log(result);
-                // assert.strictEqual(result, value);
-            });
-            */
-            /*
-            it('bad', function() {
-                var expect = "http://www.google.com";
-                var result = produce.produce(value);
-                var value = {};
-
-                assert.ok(_.is.Equal(result, value));
-            });
-            */
         });
     });
 });

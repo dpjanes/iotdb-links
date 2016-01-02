@@ -6,7 +6,6 @@
 #   2016-01-02
 #
 
-exit 0
 PACKAGE=iotdb-links
 DIST_ROOT=/var/tmp/.dist.$$
 
@@ -34,7 +33,7 @@ echo "=================="
         --exclude "node_modules" \
         README.md LICENSE \
         package.json \
-        index.js \
+        index.js parse.js produce.js quoting.js \
         |
     ( cd "${NPM_DST}" && tar xvf - && npm publish ) || exit 1
     git commit -m "new release" package.json || exit 1
