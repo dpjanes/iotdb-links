@@ -21,6 +21,7 @@
     }, 
     "homepage": "https://homestar.io", 
     "homestar": {}, 
+    "keywords": [ "IOTDB", "CoAP", "CoRE", "RFC6690", "RFC5988" ],
     "license": "Apache-2.0", 
     "main": "index.js", 
     "name": "iotdb-links", 

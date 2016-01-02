@@ -1,6 +1,12 @@
 # iotdb-links
 Code for dealing with [CoRE Link Format](https://tools.ietf.org/html/rfc6690) (RFC 6690) and similar
 
+## See also
+
+* [RFC 5988](https://tools.ietf.org/html/rfc5988)
+* [RFC 6690](https://tools.ietf.org/html/rfc6690)
+* [HTTP LINK Element](http://www.w3.org/TR/html401/struct/links.html)
+
 # Functions
 
 These are almost inverses of each other, except that 'parse()' can 

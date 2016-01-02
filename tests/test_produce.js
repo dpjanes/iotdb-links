@@ -32,14 +32,14 @@ describe('test_produce', function() {
                 });
             });
             it('single', function() {
-                var expect = '<tcp://mqtt.iotdb.org:1883>;rel="mqtt";payload="PUT";topic="bedroom/light"'
+                var expect = '<tcp://mqtt.iotdb.org:1883>;rel=mqtt;payload=PUT;topic=bedroom/light'
                 var value = { 'tcp://mqtt.iotdb.org:1883': { rel: 'mqtt', payload: 'PUT', topic: 'bedroom/light' } };
                 produce.produce(value, function(error, result) {
                     assert.strictEqual(result, expect);
                 });
             });
             it('multi', function() {
-                var expect = '<tcp://mqtt.iotdb.org:1883>;rel="mqtt";payload="PUT";topic="bedroom/light",<ssl://mqtt.iotdb.org:1883>;rel="mqtt";payload="PUT";topic="bedroom/light"'
+                var expect = '<tcp://mqtt.iotdb.org:1883>;rel=mqtt;payload=PUT;topic=bedroom/light,<ssl://mqtt.iotdb.org:1883>;rel=mqtt;payload=PUT;topic=bedroom/light'
 
                 var value = {
                     'tcp://mqtt.iotdb.org:1883': {

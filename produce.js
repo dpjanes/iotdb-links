@@ -24,6 +24,8 @@
 
 var _ = require('iotdb')._;
 
+var quoting = require('./quoting');
+
 /**
  *  rfc6690 / CoAP CORE format producer
  *
@@ -58,10 +60,6 @@ var link_producer = function (producer, done) {
         };
     }
 
-    var _quote = function (s) {
-        return s;
-    };
-
     var result = [];
 
     var _produce = function () {
@@ -75,16 +73,15 @@ var link_producer = function (producer, done) {
             }
 
             result.push("<");
-            result.push(_quote(url));
+            result.push(quoting.url(url));
             result.push(">");
 
             if (!_.is.Empty(d)) {
                 _.mapObject(d, function (value, key) {
                     result.push(";");
-                    result.push(_quote(key));
-                    result.push("=\"");
-                    result.push(_quote(value));
-                    result.push("\"");
+                    result.push(quoting.key(key));
+                    result.push("=");
+                    result.push(quoting.value(value));
                 });
             }
 
