@@ -7,6 +7,10 @@ Code for dealing with [CoRE Link Format](https://tools.ietf.org/html/rfc6690) (R
 * [RFC 6690](https://tools.ietf.org/html/rfc6690)
 * [HTTP LINK Element](http://www.w3.org/TR/html401/struct/links.html)
 
+## Notes
+
+* quoting functions are probably not 100% compliant, especially with unicode. Please help.
+
 # Functions
 
 These are almost inverses of each other, except that 'parse()' can 
