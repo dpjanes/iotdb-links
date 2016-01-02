@@ -31,9 +31,8 @@ var _ = require('iotdb')._;
  *  repeatedly, which will in turn callback with 
  *  a 'url' and a 'd'. When 'url' is null, it finishes
  *
- *  If 'producer' is an array, it should be an
- *  array of dictionaries, each dictionary containing
- *  an element 'url' and 'd'.
+ *  If 'producer' is a Dictionary, the keys
+ *  should be the URLs and the values the 'd'
  *
  *  When the link(s) is/are produced, done will be
  *  called back with (error, link-string)
@@ -42,17 +41,20 @@ var _ = require('iotdb')._;
  *  this for unicode and weird IETF things
  */
 var link_producer = function (producer, done) {
-    if (_.is.Array(producer)) {
-        var items = producer;
-        var i = 0;
+    if (_.is.Dictionary(producer)) {
+        var itemdd = producer;
+        var urls = _.keys(itemdd);
+        var ui = 0;
 
         producer = function (callback) {
-            if (i >= items.length) {
+            if (ui >= urls.length) {
                 return callback(null, null);
             }
 
-            var item = items[i++];
-            callback(item.url, item.d);
+            var url = urls[ui++];
+            var itemd = itemdd[url];
+
+            callback(url, itemd);
         };
     }
 

@@ -3,6 +3,9 @@ Code for dealing with [CoRE Link Format](https://tools.ietf.org/html/rfc6690) (R
 
 # Functions
 
+These are almost inverses of each other, except that 'parse()' can 
+accept a wider range of values than 'produce()' will generate.
+
 ## parse
 
 Parse a Link Header
@@ -19,25 +22,18 @@ Parse a Link Header
 
 ## produce
 
-    var links = [ 
-        {
-            "url": "/djkd",
-            "d":  { 
-                "a": "1",
-            },
+Produce a Link Header
+
+    var linkd = {
+        "/djkd" : {
+            "a": "1",
         },
-        {
-            "url": "/b/c",
-            "d":  { 
-                "c": "1",
-                "d": "2",
-            },
-        }
-    ];
-    var result = exports.produce(links, function(error, result)) {
+        "/b/c":  { 
+            "c": "1",
+            "d": "2",
+        },
     };
 
-    exports.produce([
-    ], function(error, result) {
+    iotdb_link.produce(linkd, function(error, result) {
         var expect = '</djkd>;a="1",</b/c>;c="1";d="2"';
     });
