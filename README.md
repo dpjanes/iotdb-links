@@ -10,7 +10,7 @@ Code for dealing with [CoRE Link Format](https://tools.ietf.org/html/rfc6690) (R
 * [HTTP LINK Element](http://www.w3.org/TR/html401/struct/links.html)
 
 Although fully stand-alone, this module is part of the IOTDB project.
-Find out more about this here [https://homestar.io/about](https://homestar.io/about].
+Find out more about this here [https://homestar.io/about](https://homestar.io/about).
 
 ## Notes
 
