@@ -24,23 +24,3 @@
 
 exports.produce = require('./produce').produce;
 exports.parse = require('./parse').parse;
-
-/*
-exports.produce([
-    {
-        "url": "/djkd",
-        "d":  { 
-            "a": "1",
-        },
-    },
-    {
-        "url": "/b/c",
-        "d":  { 
-            "c": "1",
-            "d": "2",
-        },
-    }
-], function(error, result) {
-    console.log(result);
-});
- */

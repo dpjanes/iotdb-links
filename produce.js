@@ -41,12 +41,12 @@ var _ = require('iotdb')._;
  *  Note that there's a lot of work to be done on 
  *  this for unicode and weird IETF things
  */
-var link_producer = function(producer, done) {
+var link_producer = function (producer, done) {
     if (_.is.Array(producer)) {
         var items = producer;
         var i = 0;
 
-        producer = function(callback) {
+        producer = function (callback) {
             if (i >= items.length) {
                 return callback(null, null);
             }
@@ -56,14 +56,14 @@ var link_producer = function(producer, done) {
         };
     }
 
-    var _quote = function(s) {
+    var _quote = function (s) {
         return s;
     };
 
     var result = [];
 
-    var _produce = function() {
-        producer(function(url, d) {
+    var _produce = function () {
+        producer(function (url, d) {
             if (!url) {
                 return done(null, result.join(""));
             }
@@ -77,7 +77,7 @@ var link_producer = function(producer, done) {
             result.push(">");
 
             if (!_.is.Empty(d)) {
-                _.mapObject(d, function(value, key) {
+                _.mapObject(d, function (value, key) {
                     result.push(";");
                     result.push(_quote(key));
                     result.push("=\"");

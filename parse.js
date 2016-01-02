@@ -128,4 +128,4 @@ _see_extension = function (text) {
 /**
  *  API
  */
-var parse = parse_link;
+exports.parse = parse_link;
