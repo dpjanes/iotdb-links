@@ -4,19 +4,20 @@
         "url": "https://github.com/dpjanes/iotdb-links/issues"
     }, 
     "dependencies": {
-        "iotdb": ">=0.6.3"
+        "iotdb": ">=0.11.0"
     }, 
-    "description": "Code for dealing with CoRE Link Format (RFC 6690) and similar",
+    "description": "Code for dealing with CoRE Link Format (RFC 6690) and similar", 
     "devDependencies": {
         "grunt": "~0.4.5", 
-        "grunt-contrib-jshint": "~0.10.0", 
-        "grunt-contrib-nodeunit": "~0.2.0", 
-        "grunt-contrib-uglify": "~0.5.0", 
-        "grunt-contrib-watch": "~0.5.0", 
-        "grunt-jsbeautifier": "^0.2.7", 
-        "jshint-stylish": "~0.1.3", 
-        "load-grunt-tasks": "~0.2.0", 
-        "request": "^2.36.0"
+        "grunt-contrib-jshint": "~0.11.3", 
+        "grunt-contrib-nodeunit": "~0.4.1", 
+        "grunt-contrib-uglify": "~0.11.0", 
+        "grunt-contrib-watch": "~0.6.1", 
+        "grunt-jsbeautifier": "~0.2.10", 
+        "istanbul": "~0.4.1", 
+        "jshint-stylish": "~2.1.0", 
+        "load-grunt-tasks": "~3.4.0", 
+        "request": "~2.67.0"
     }, 
     "homepage": "https://homestar.io", 
     "homestar": {}, 
@@ -29,6 +30,7 @@
         "url": "https://github.com/dpjanes/iotdb-links"
     }, 
     "scripts": {
+        "cover": "istanbul cover _mocha tests", 
         "test": "grunt"
     }, 
     "version": "0.0.0"

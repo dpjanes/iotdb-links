@@ -1,5 +1,5 @@
 /*
- *  test_parse.js
+ *  test_produce.js
  *
  *  David Janes
  *  IOTDB
@@ -13,8 +13,8 @@ var sleep = require("sleep");
 var parse = require("../parse")
 var _ = require("iotdb")._;
 
-describe('test_parse', function() {
-    describe('parse_link', function() {
+describe('test_produce', function() {
+    describe('produce', function() {
         it('empty', function() {
             var value = "";
             var result = parse.parse(value);
