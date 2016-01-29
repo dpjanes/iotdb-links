@@ -22,6 +22,9 @@
 
 "use strict";
 
+var iotdb = require('iotdb');
+var _ = iotdb._;
+
 /**
  *  This needs to be cleaned up to deal with unicode
  *  characters and perhaps other edge cases
@@ -39,6 +42,10 @@ var key = function (s) {
  *  characters and perhaps other edge cases
  */
 var value = function (s) {
+    if (!_.is.String(s)) {
+        s = "" + s;
+    }
+
     s = s.replace(/["\\]/g, "\\$&");
     if (s.match(/[" ]/g)) {
         return '"' + s + '"';
