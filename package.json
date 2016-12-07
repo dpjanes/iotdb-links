@@ -4,22 +4,22 @@
         "url": "https://github.com/dpjanes/iotdb-links/issues"
     }, 
     "dependencies": {
-        "iotdb": ">=0.12.0"
+        "iotdb-helpers": "~3.0.17"
     }, 
     "description": "Code for dealing with CoRE Link Format (RFC 6690) and similar", 
     "devDependencies": {
-        "grunt": "~0.4.5", 
-        "grunt-contrib-jshint": "~0.12.0", 
-        "grunt-contrib-nodeunit": "~0.4.1", 
-        "grunt-contrib-uglify": "~0.11.1", 
-        "grunt-contrib-watch": "~0.6.1", 
-        "grunt-jsbeautifier": "~0.2.10", 
-        "istanbul": "~0.4.2", 
-        "jshint-stylish": "~2.1.0", 
-        "load-grunt-tasks": "~3.4.0", 
-        "request": "~2.69.0"
+        "grunt": "~1.0.1", 
+        "grunt-contrib-jshint": "~1.1.0", 
+        "grunt-contrib-nodeunit": "~1.0.0", 
+        "grunt-contrib-uglify": "~2.0.0", 
+        "grunt-contrib-watch": "~1.0.0", 
+        "grunt-jsbeautifier": "~0.2.13", 
+        "istanbul": "~0.4.5", 
+        "jshint-stylish": "~2.2.1", 
+        "load-grunt-tasks": "~3.5.2", 
+        "request": "~2.79.0"
     }, 
-    "homepage": "https://github.com/dpjanes/node-iotdb",
+    "homepage": "https://github.com/dpjanes/node-iotdb", 
     "homestar": {}, 
     "keywords": [
         "IOTDB", 

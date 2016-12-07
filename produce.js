@@ -22,9 +22,9 @@
 
 "use strict";
 
-var _ = require('iotdb-helpers');
+const _ = require('iotdb-helpers');
 
-var quoting = require('./quoting');
+const quoting = require('./quoting');
 
 /**
  *  rfc6690 / CoAP CORE format producer
@@ -42,27 +42,27 @@ var quoting = require('./quoting');
  *  Note that there's a lot of work to be done on 
  *  this for unicode and weird IETF things
  */
-var link_producer = function (producer, done) {
+const link_producer = function (producer, done) {
     if (_.is.Dictionary(producer)) {
-        var itemdd = producer;
-        var urls = _.keys(itemdd);
-        var ui = 0;
+        const itemdd = producer;
+        const urls = _.keys(itemdd);
+        let ui = 0;
 
         producer = function (callback) {
             if (ui >= urls.length) {
                 return callback(null, null);
             }
 
-            var url = urls[ui++];
-            var itemd = itemdd[url];
+            const url = urls[ui++];
+            const itemd = itemdd[url];
 
             callback(url, itemd);
         };
     }
 
-    var result = [];
+    const result = [];
 
-    var _produce = function () {
+    const _produce = function () {
         producer(function (url, d) {
             if (!url) {
                 return done(null, result.join(""));
