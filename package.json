@@ -4,6 +4,7 @@
         "url": "https://github.com/dpjanes/iotdb-links/issues"
     }, 
     "dependencies": {
+        "iotdb": ">=3.0.0", 
         "iotdb-helpers": "~3.0.17"
     }, 
     "description": "Code for dealing with CoRE Link Format (RFC 6690) and similar", 
@@ -40,5 +41,5 @@
         "cover": "istanbul cover _mocha tests", 
         "test": "grunt"
     }, 
-    "version": "0.0.4"
+    "version": "0.0.5"
 }
