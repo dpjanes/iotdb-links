@@ -28,17 +28,15 @@
 
 "use strict";
 
-var _ = require("iotdb")._;
-
 // forwards
 var _see_link;
 var _see_semicolon;
 var _see_comma;
 var _see_extension;
 
-var parse_link = function (link) {
-    var rdd = {};
-    var d;
+const parse_link = function (link) {
+    const rdd = {};
+    let d;
 
     while (link.length > 0) {
         // link
@@ -50,7 +48,7 @@ var parse_link = function (link) {
         }
 
 
-        var rd = {};
+        const rd = {};
         rdd[d.url] = rd;
 
         while (true) {
@@ -83,7 +81,7 @@ var parse_link = function (link) {
 };
 
 _see_link = function (text) {
-    var match = text.match(/^\s*<([^>]*)>/);
+    const match = text.match(/^\s*<([^>]*)>/);
     if (match) {
         return {
             url: match[1],
@@ -93,7 +91,7 @@ _see_link = function (text) {
 };
 
 _see_semicolon = function (text) {
-    var match = text.match(/^\s*;/);
+    const match = text.match(/^\s*;/);
     if (match) {
         return {
             link: text.substring(match[0].length)
@@ -102,7 +100,7 @@ _see_semicolon = function (text) {
 };
 
 _see_comma = function (text) {
-    var match = text.match(/^\s*,/);
+    const match = text.match(/^\s*,/);
     if (match) {
         return {
             link: text.substring(match[0].length)
@@ -110,11 +108,9 @@ _see_comma = function (text) {
     }
 };
 
+// XXX - missing \" handling
 _see_extension = function (text) {
-    var match = text.match(/^\s*([^=\s]*)\s*=\s*"([^";,]*)"/); // XXX - missing \" handling
-    if (!match) {
-        match = text.match(/^\s*([^=\s]*)\s*=\s*([^;,]*)/);
-    }
+    const match = text.match(/^\s*([^=\s]*)\s*=\s*"([^"]*)"/) || text.match(/^\s*([^=\s]*)\s*=\s*([^,;]*)/);
     if (match) {
         return {
             name: match[1],

@@ -22,14 +22,13 @@
 
 "use strict";
 
-var iotdb = require('iotdb');
-var _ = iotdb._;
+const _ = require('iotdb-helpers');
 
 /**
  *  This needs to be cleaned up to deal with unicode
  *  characters and perhaps other edge cases
  */
-var key = function (s) {
+const key = function (s) {
     if (s.match(/[^-A-Za-z0-9_]/g)) {
         throw new Error("bad key");
     }
@@ -41,7 +40,7 @@ var key = function (s) {
  *  This needs to be cleaned up to deal with unicode
  *  characters and perhaps other edge cases
  */
-var value = function (s) {
+const value = function (s) {
     if (!_.is.String(s)) {
         s = "" + s;
     }
@@ -58,7 +57,7 @@ var value = function (s) {
  *  This needs to be cleaned up to deal with unicode
  *  characters and perhaps other edge cases
  */
-var url = function (s) {
+const url = function (s) {
     return s;
 };
 

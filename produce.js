@@ -22,7 +22,7 @@
 
 "use strict";
 
-var _ = require('iotdb')._;
+var _ = require('iotdb-helpers');
 
 var quoting = require('./quoting');
 
