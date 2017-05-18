@@ -46,7 +46,7 @@ const value = function (s) {
     }
 
     s = s.replace(/["\\]/g, "\\$&");
-    if (s.match(/[" ]/g)) {
+    if (s.match(/["; ]/g)) {
         return '"' + s + '"';
     } else {
         return s;
