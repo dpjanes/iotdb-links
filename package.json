@@ -1,44 +1,46 @@
 {
-    "author": "David P. Janes <davidjanes@iotdb.org> (https://iotdb.org)", 
-    "bugs": {
-        "url": "https://github.com/dpjanes/iotdb-links/issues"
-    }, 
-    "dependencies": {
-        "iotdb-helpers": "~3.0.17"
-    }, 
-    "description": "Code for dealing with CoRE Link Format (RFC 6690) and similar", 
-    "devDependencies": {
-        "grunt": "~1.0.1", 
-        "grunt-contrib-jshint": "~1.1.0", 
-        "grunt-contrib-nodeunit": "~1.0.0", 
-        "grunt-contrib-uglify": "~2.0.0", 
-        "grunt-contrib-watch": "~1.0.0", 
-        "grunt-jsbeautifier": "~0.2.13", 
-        "istanbul": "~0.4.5", 
-        "jshint-stylish": "~2.2.1", 
-        "load-grunt-tasks": "~3.5.2", 
-        "request": "~2.79.0"
-    }, 
-    "homepage": "https://github.com/dpjanes/node-iotdb", 
-    "homestar": {}, 
-    "keywords": [
-        "IOTDB", 
-        "CoAP", 
-        "CoRE", 
-        "RFC6690", 
-        "RFC5988"
-    ], 
-    "license": "Apache-2.0", 
-    "main": "index.js", 
-    "name": "iotdb-links", 
-    "private": false, 
-    "repository": {
-        "type": "git", 
-        "url": "https://github.com/dpjanes/iotdb-links"
-    }, 
-    "scripts": {
-        "cover": "istanbul cover _mocha tests", 
-        "test": "grunt"
-    }, 
-    "version": "1.0.1"
+  "author": "David P. Janes <davidjanes@iotdb.org> (https://iotdb.org)",
+  "bugs": {
+    "url": "https://github.com/dpjanes/iotdb-links/issues"
+  },
+  "dependencies": {
+    "iotdb-helpers": "~3.0.17"
+  },
+  "description": "Code for dealing with CoRE Link Format (RFC 6690) and similar",
+  "devDependencies": {
+    "grunt": "1.0.1",
+    "grunt-contrib-jshint": "1.1.0",
+    "grunt-contrib-nodeunit": "1.0.0",
+    "grunt-contrib-uglify": "2.0.0",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-jsbeautifier": "0.2.13",
+    "iotdb": "3.0.12",
+    "istanbul": "0.4.5",
+    "jshint-stylish": "2.2.1",
+    "load-grunt-tasks": "3.5.2",
+    "request": "2.79.0",
+    "sleep": "5.1.1"
+  },
+  "homepage": "https://github.com/dpjanes/node-iotdb",
+  "homestar": {},
+  "keywords": [
+    "IOTDB",
+    "CoAP",
+    "CoRE",
+    "RFC6690",
+    "RFC5988"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "iotdb-links",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dpjanes/iotdb-links"
+  },
+  "scripts": {
+    "cover": "istanbul cover _mocha tests",
+    "test": "grunt"
+  },
+  "version": "1.0.1"
 }
