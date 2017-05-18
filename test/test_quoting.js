@@ -101,5 +101,12 @@ describe('test_quoting', function() {
 
             assert.strictEqual(expect, result);
         });
+        it('semicolon', function() {
+            var value = 'a;semicolon';
+            var expect = '"a;semicolon"';
+            var result = quoting.value(value);
+
+            assert.strictEqual(expect, result);
+        });
     });
 });

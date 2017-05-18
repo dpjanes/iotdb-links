@@ -58,6 +58,19 @@ describe('test_produce', function() {
                     assert.strictEqual(result, expect);
                 });
             });
+            it('semicolon', function() {
+               var expect = '</a>;ep="ni:///sha-256;abc"';
+               
+               var value = {
+                   '/a': {
+                       ep: 'ni:///sha-256;abc'
+                   }
+               };
+
+               produce.produce(value, function(error, result) {
+                   assert.strictEqual(result, expect);
+               });
+            });
             it('producer', function() {
                 var values = [
                     [ 'tcp://mqtt.iotdb.org:1883', {
