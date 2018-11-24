@@ -9,7 +9,6 @@
 "use strict";
 
 const assert = require("assert")
-const sleep = require("sleep");
 const parse = require("../parse")
 const _ = require("iotdb")._;
 

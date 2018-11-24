@@ -9,7 +9,6 @@
 "use strict";
 
 var assert = require("assert")
-var sleep = require("sleep");
 var quoting = require("../quoting")
 var _ = require("iotdb")._;
 
