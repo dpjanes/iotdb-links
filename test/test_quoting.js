@@ -8,9 +8,9 @@
 
 "use strict";
 
-var assert = require("assert")
-var quoting = require("../quoting")
-var _ = require("iotdb")._;
+const _ = require("iotdb-helpers")
+const assert = require("assert")
+const quoting = require("../lib/quoting")
 
 describe('test_quoting', function() {
     describe('url', function() {

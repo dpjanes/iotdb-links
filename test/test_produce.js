@@ -6,11 +6,11 @@
  *  2016-01-02
  */
 
-"use strict";
+"use strict"
 
-var assert = require("assert")
-var produce = require("../produce")
-var _ = require("iotdb")._;
+const _ = require("iotdb-helpers")
+const assert = require("assert")
+const links = require("..")
 
 describe('test_produce', function() {
     describe('produce', function() {
@@ -18,7 +18,7 @@ describe('test_produce', function() {
             it('empty', function() {
                 var expect = "";
                 var value = {}
-                produce.produce(value, function(error, result) {
+                links.produce(value, function(error, result) {
                     assert.strictEqual(result, expect);
                 });
             });
@@ -26,14 +26,14 @@ describe('test_produce', function() {
                 var expect = '<tcp://mqtt.iotdb.org:1883>';
                 var value = { 'tcp://mqtt.iotdb.org:1883': {} };
 
-                produce.produce(value, function(error, result) {
+                links.produce(value, function(error, result) {
                     assert.strictEqual(result, expect);
                 });
             });
             it('single', function() {
                 var expect = '<tcp://mqtt.iotdb.org:1883>;rel=mqtt;payload=PUT;topic=bedroom/light'
                 var value = { 'tcp://mqtt.iotdb.org:1883': { rel: 'mqtt', payload: 'PUT', topic: 'bedroom/light' } };
-                produce.produce(value, function(error, result) {
+                links.produce(value, function(error, result) {
                     assert.strictEqual(result, expect);
                 });
             });
@@ -53,7 +53,7 @@ describe('test_produce', function() {
                     }
                 };
 
-                produce.produce(value, function(error, result) {
+                links.produce(value, function(error, result) {
                     assert.strictEqual(result, expect);
                 });
             });
@@ -66,7 +66,7 @@ describe('test_produce', function() {
                    }
                };
 
-               produce.produce(value, function(error, result) {
+               links.produce(value, function(error, result) {
                    assert.strictEqual(result, expect);
                });
             });
@@ -94,7 +94,7 @@ describe('test_produce', function() {
                 };
 
                 var expect = '<tcp://mqtt.iotdb.org:1883>;rel=mqtt;payload=PUT;topic=bedroom/light,<ssl://mqtt.iotdb.org:1883>;rel=mqtt;payload=PUT;topic=bedroom/light'
-                produce.produce(_producer, function(error, result) {
+                links.produce(_producer, function(error, result) {
                     assert.strictEqual(result, expect);
                 });
             });

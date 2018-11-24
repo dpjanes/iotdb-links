@@ -20,7 +20,7 @@
  *  limitations under the License.
  */
 
-"use strict";
+"use strict"
 
-exports.produce = require('./produce').produce;
-exports.parse = require('./parse').parse;
+exports.produce = require('./lib/produce').produce
+exports.parse = require('./lib/parse').parse
