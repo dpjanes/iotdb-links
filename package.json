@@ -4,11 +4,9 @@
         "url": "https://github.com/dpjanes/iotdb-links/issues"
     }, 
     "dependencies": {
-        "iotdb-helpers": "~3.0.31"
+        "iotdb-helpers": "~3.3.16"
     }, 
     "description": "Code for dealing with CoRE Link Format (RFC 6690) and similar", 
-    "devDependencies": {
-    }, 
     "homepage": "https://github.com/dpjanes/node-iotdb", 
     "homestar": {}, 
     "keywords": [
@@ -30,5 +28,5 @@
         "cover": "nyc --reporter=html mocha --recursive", 
         "test": "mocha --recursive --bail"
     }, 
-    "version": "1.0.2"
+    "version": "1.0.3"
 }
