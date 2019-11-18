@@ -25,21 +25,32 @@ accept a wider range of values than 'produce()' will generate.
 
 Parse a Link Header
 
-    var value = '<tcp://mqtt.iotdb.org:1883>; rel="mqtt"; payload=PUT; topic="bedroom/light"'
-    var result = iotdb_link.parse(value);
-    var expect = {
+    const value = '<tcp://mqtt.iotdb.org:1883>; rel="mqtt"; payload=PUT; topic="bedroom/light"'
+    const result = iotdb_link.parse(value)
+    const expect = {
         'tcp://mqtt.iotdb.org:1883': {
             rel: 'mqtt',
             payload: 'PUT',
             topic: 'bedroom/light'
         }
-    };
+    }
+
+You can also get a flattened version
+
+    const value = '<tcp://mqtt.iotdb.org:1883>; rel="mqtt"; payload=PUT; topic="bedroom/light"'
+    const result = iotdb_link.parse.flat(value)
+    const expect = {
+        url: 'tcp://mqtt.iotdb.org:1883',
+        rel: 'mqtt',
+        payload: 'PUT',
+        topic: 'bedroom/light'
+    }
 
 ## produce
 
 Produce a Link Header
 
-    var linkd = {
+    const linkd = {
         "/djkd" : {
             "a": "1",
         },
@@ -47,8 +58,8 @@ Produce a Link Header
             "c": "1",
             "d": "2",
         },
-    };
+    }
 
     iotdb_link.produce(linkd, function(error, result) {
-        var expect = '</djkd>;a="1",</b/c>;c="1";d="2"';
-    });
+        const expect = '</djkd>;a="1",</b/c>;c="1";d="2"'
+    })

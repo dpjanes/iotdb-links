@@ -4,7 +4,7 @@
         "url": "https://github.com/dpjanes/iotdb-links/issues"
     }, 
     "dependencies": {
-        "iotdb-helpers": "~3.3.16"
+        "iotdb-helpers": "~3.4.2"
     }, 
     "description": "Code for dealing with CoRE Link Format (RFC 6690) and similar", 
     "homepage": "https://github.com/dpjanes/node-iotdb", 
